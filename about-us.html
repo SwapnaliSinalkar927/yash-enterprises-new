@@ -72,6 +72,82 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <style>
+        /* Services One carousel: aligned cards, 2-line heading, 3-line description */
+        .services-one__carousel .services-one__single {
+            min-height: 380px;
+        }
+
+        /* White box matches the card width so every card is identical */
+        .services-one__carousel .services-one__single-inner {
+            left: 0;
+            right: 0;
+            padding: 30px 25px 37px;
+        }
+
+        /* Heading: max 2 lines, "..." if longer, always reserves 2 lines */
+        .services-one__carousel .services-one__single-inner h2 {
+            width: 90%;
+            font-size: 24px;
+            line-height: 34px !important;
+            height: 68px !important;
+            margin: 28px auto 20px;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Description: max 3 lines, "..." if longer, always reserves 3 lines */
+        .services-one__carousel .services-one__single-inner p {
+            line-height: 27px !important;
+            height: 81px !important;
+            margin: 0 !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* Working Process: equal-height cards */
+        .working-process-one .row > [class*="col-"] {
+            display: flex;
+        }
+
+        .working-process-one__single {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Heading: max 2 lines, "..." if longer, always reserves 2 lines */
+        .working-process-one__single .content-box h2 {
+            line-height: 34px !important;
+            height: 68px !important;
+            margin-bottom: 12px !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Description: max 3 lines, "..." if longer, always reserves 3 lines */
+        .working-process-one__single .content-box p {
+            line-height: 27px !important;
+            height: 81px !important;
+            margin: 0 !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
 </head>
 <body class="custom-cursor">
 
@@ -902,19 +978,16 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="icon-envelope"></i>
-                    <a href="mailto:needhelp@cleanin.com">needhelp@cleanin.com</a>
+                    <a href="mailto:yashenterprises5556@gmail.com">yashenterprises5556@gmail.com</a>
                 </li>
                 <li>
                     <i class="icon-phone-call"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:992-275-6972">992 275 6972</a>
                 </li>
             </ul>
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="icon-facebook-app-symbol"></a>
-                    <a href="#" class="icon-twitter-1"></a>
                     <a href="https://www.instagram.com/yash.enterprises__?utm_source=qr&stkn=MXd3OWpuMnVmbTJweQ%3D%3D" class="icon-instagram"></a>
-                    <a href="#" class="icon-pinterest"></a>
                 </div>
             </div>
         </div>

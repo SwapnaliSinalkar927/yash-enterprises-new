@@ -75,6 +75,104 @@
 
     <style>
         .cleaning-gallery { width: 100%; padding: 12px; } .cleaning-gallery-grid { display: grid; width: 100%; height: 1000px; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); gap: 12px; } .cleaning-gallery-item { position: relative; overflow: hidden; } .cleaning-gallery-item-inner { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 16px; } .cleaning-gallery-item img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; } /* ======================================== Desktop Layout ======================================== */ .item-1 { grid-area: 1 / 1 / 3 / 2; } .item-2 { grid-area: 1 / 2 / 2 / 3; } .item-3 { grid-area: 2 / 2 / 4 / 3; } .item-4 { grid-area: 1 / 3 / 3 / 4; } .item-5 { grid-area: 3 / 1 / 4 / 2; } .item-6 { grid-area: 3 / 3 / 5 / 4; } .item-7 { grid-area: 4 / 1 / 5 / 2; } .item-8 { grid-area: 4 / 2 / 5 / 3; } /* ======================================== Tablet 768px - 1024px ======================================== */ @media (max-width: 1024px) { .cleaning-gallery { padding: 10px; } .cleaning-gallery-grid { height: 550px; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(4, 1fr); gap: 10px; } .item-1 { grid-area: 1 / 1 / 3 / 2; } .item-2 { grid-area: 1 / 2 / 2 / 3; } .item-3 { grid-area: 2 / 2 / 4 / 3; } .item-4 { grid-area: 3 / 1 / 5 / 2; } .item-5 { grid-area: 4 / 2 / 5 / 3; } .item-6 { display: none; } .item-7 { display: none; } .item-8 { display: none; } } /* ======================================== Mobile Below 767px ======================================== */ @media (max-width: 767px) { .cleaning-gallery { padding: 8px; } .cleaning-gallery-grid { display: grid; height: auto; grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; } .cleaning-gallery-item { grid-area: auto !important; display: block; } .cleaning-gallery-item-inner { height: 260px; border-radius: 14px; } .cleaning-gallery-item img { position: absolute; width: 100%; height: 100%; object-fit: cover; } .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8 { display: block; } } /* ======================================== Small Mobile Below 480px ======================================== */ @media (max-width: 480px) { .cleaning-gallery { padding: 6px; } .cleaning-gallery-grid { gap: 10px; } .cleaning-gallery-item-inner { height: 220px; border-radius: 12px; } }
+       /* Equal-height cards in every row */
+        .services-five .row > [class*="col-"] {
+            display: flex;
+        }
+
+        .services-five__single {
+            display: flex !important;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .services-five__single-content {
+            flex: 1;
+            padding: 52px 20px 31px !important;
+        }
+
+        /* Heading: max 2 lines, "..." if longer, always reserves 2 lines */
+        .services-five__single-content h2 {
+            font-size: 24px;
+            line-height: 34px !important;
+            height: 68px !important;
+            margin-bottom: 8px !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Description: max 3 lines, "..." if longer, always reserves 3 lines */
+        .services-five__single-content p {
+            line-height: 27px !important;
+            height: 81px !important;
+            margin: 0 !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* Equal-height testimonial cards */
+        .testimonial-one__carousel .owl-stage {
+            display: flex !important;
+        }
+
+        .testimonial-one__carousel .owl-item {
+            display: flex !important;
+            height: auto;
+        }
+
+        .testimonial-one__carousel .testimonial-one__single {
+            width: 100%;
+            height: 100%;
+        }
+
+        .testimonial-one__carousel .testimonial-one__single-inner {
+            height: 100%;
+        }
+
+        /* Name: 1 line, "..." if longer */
+        .testimonial-one__single-inner h2 {
+            line-height: 34px !important;
+            height: 34px !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Designation: max 2 lines, always reserves 2 lines */
+        .testimonial-one__single-inner h6 {
+            line-height: 24px !important;
+            height: 48px !important;
+            margin-bottom: 20px !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Review text: max 3 lines, always reserves 3 lines */
+        .testimonial-one__single-inner p {
+            line-height: 27px !important;
+            height: 81px !important;
+            margin-bottom: 20px !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     </style>
 </head>
 <body class="custom-cursor">
@@ -445,121 +543,123 @@
                         Services For You </h2>
                 </div>
 
-                <div class="container">
+               <div class="container">
                     <div class="row">
-                    <!--Start Services Five Single-->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="services-five__single">
-                        <div class="services-five__single-img">
-                            <div class="services-five__single-img-inner">
-                            <img style="height:340px" src="assets/images/services/serv1.webp" alt="">
-                            </div>
-                            <div class="icon">
-                            <span class="icon-bed"></span>
-                            </div>
-                        </div>
-                        <div class="services-five__single-content text-center">
-                            <h2><a href="house-cleaning.php">Weekly apartment service</a></h2>
-                            <p>Full dusting, mopping, and bathroom scrub in <br>every flat. Same crew each week.</p>
-                        </div>
-                        </div>
-                    </div>
-                    <!--End Services Five Single-->
 
-                    <!--Start Services Five Single-->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="services-five__single">
-                        <div class="services-five__single-img">
-                            <div class="services-five__single-img-inner">
-                            <img style="height:340px" src="assets/images/services/serv2.webp" alt="">
+                        <!--Start Services Five Single-->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="services-five__single">
+                                <div class="services-five__single-img">
+                                    <div class="services-five__single-img-inner">
+                                        <img style="height:340px" src="assets/images/services/serv1.webp" alt="">
+                                    </div>
+                                    <div class="icon">
+                                        <span class="icon-bed"></span>
+                                    </div>
+                                </div>
+                                <div class="services-five__single-content text-center">
+                                    <h2><a href="house-cleaning.php">Weekly apartment service</a></h2>
+                                    <p>Full dusting, mopping, and bathroom scrub in every flat. Same crew each week.</p>
+                                </div>
                             </div>
-                            <div class="icon">
-                            <span class="icon-window-cleaning"></span>
-                            </div>
                         </div>
-                        <div class="services-five__single-content text-center">
-                            <h2><a href="house-cleaning.php">Common area maintenance</a></h2>
-                            <p>Lobbies, staircases, and corridors cleaned on a set <br>schedule. No missed spots.</p>
-                        </div>
-                        </div>
-                    </div>
-                    <!--End Services Five Single-->
+                        <!--End Services Five Single-->
 
-                    <!--Start Services Five Single-->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="services-five__single">
-                        <div class="services-five__single-img">
-                            <div class="services-five__single-img-inner">
-                            <img style="height:340px" src="assets/images/services/serv3.webp" alt="">
+                        <!--Start Services Five Single-->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="services-five__single">
+                                <div class="services-five__single-img">
+                                    <div class="services-five__single-img-inner">
+                                        <img style="height:340px" src="assets/images/services/serv2.webp" alt="">
+                                    </div>
+                                    <div class="icon">
+                                        <span class="icon-window-cleaning"></span>
+                                    </div>
+                                </div>
+                                <div class="services-five__single-content text-center">
+                                    <h2><a href="house-cleaning.php">Common area maintenance</a></h2>
+                                    <p>Lobbies, staircases, and corridors cleaned on a set schedule. No missed spots.</p>
+                                </div>
                             </div>
-                            <div class="icon">
-                            <span class="icon-house"></span>
-                            </div>
                         </div>
-                        <div class="services-five__single-content text-center">
-                            <h2><a href="house-cleaning.php">Deep cleaning rounds</a></h2>
-                            <p>Quarterly deep scrub for windows, grout, and <br>overlooked corners in every unit.</p>
-                        </div>
-                        </div>
-                    </div>
-                    <!--End Services Five Single-->
+                        <!--End Services Five Single-->
 
-                    <!--Start Services Five Single-->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="services-five__single">
-                        <div class="services-five__single-img">
-                            <div class="services-five__single-img-inner">
-                            <img style="height:340px" src="assets/images/services/serv4.webp" alt="">
+                        <!--Start Services Five Single-->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="services-five__single">
+                                <div class="services-five__single-img">
+                                    <div class="services-five__single-img-inner">
+                                        <img style="height:340px" src="assets/images/services/serv3.webp" alt="">
+                                    </div>
+                                    <div class="icon">
+                                        <span class="icon-house"></span>
+                                    </div>
+                                </div>
+                                <div class="services-five__single-content text-center">
+                                    <h2><a href="house-cleaning.php">Residential & Industrial Housekeeping</a></h2>
+                                    <p>Involves cleaning, maintaining, and organizing homes, factories, and workplaces.</p>
+                                </div>
                             </div>
-                            <div class="icon">
-                            <span class="icon-window-cleaner"></span>
-                            </div>
                         </div>
-                        <div class="services-five__single-content text-center">
-                            <h2><a href="house-cleaning.php">Garbage and recycling runs</a></h2>
-                            <p>Daily waste collection from each floor. Segregated <br>disposal as per society rules.</p>
-                        </div>
-                        </div>
-                    </div>
-                    <!--End Services Five Single-->
+                        <!--End Services Five Single-->
 
-                    <!--Start Services Five Single-->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="services-five__single">
-                        <div class="services-five__single-img">
-                            <div class="services-five__single-img-inner">
-                            <img style="height:340px" src="assets/images/services/serv5.webp" alt="">
+                        <!--Start Services Five Single-->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="services-five__single">
+                                <div class="services-five__single-img">
+                                    <div class="services-five__single-img-inner">
+                                        <img style="height:340px" src="assets/images/services/serv4.webp" alt="">
+                                    </div>
+                                    <div class="icon">
+                                        <span class="icon-window-cleaner"></span>
+                                    </div>
+                                </div>
+                                <div class="services-five__single-content text-center">
+                                    <h2><a href="house-cleaning.php">Garbage and recycling runs</a></h2>
+                                    <p>Daily waste collection from each floor. Segregated disposal as per society rules.</p>
+                                </div>
                             </div>
-                            <div class="icon">
-                            <span class="icon-house-2"></span>
-                            </div>
                         </div>
-                        <div class="services-five__single-content text-center">
-                            <h2><a href="house-cleaning.php">Parking and basement upkeep</a></h2>
-                            <p>Sweeping, mopping, and removing debris from <br>parking areas and basement levels.</p>
-                        </div>
-                        </div>
-                    </div>
-                    <!--End Services Five Single-->
+                        <!--End Services Five Single-->
 
-                    <!--Start Services Five Single-->
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="services-five__single">
-                        <div class="services-five__single-img">
-                            <div class="services-five__single-img-inner">
-                            <img style="height:340px" src="assets/images/services/serv6.webp" alt="">
+                        <!--Start Services Five Single-->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="services-five__single">
+                                <div class="services-five__single-img">
+                                    <div class="services-five__single-img-inner">
+                                        <img style="height:340px" src="assets/images/services/serv5.webp" alt="">
+                                    </div>
+                                    <div class="icon">
+                                        <span class="icon-house-2"></span>
+                                    </div>
+                                </div>
+                                <div class="services-five__single-content text-center">
+                                    <h2><a href="house-cleaning.php">Parking and basement upkeep</a></h2>
+                                    <p>Sweeping, mopping, and removing debris from parking areas and basement levels.</p>
+                                </div>
                             </div>
-                            <div class="icon">
-                            <span class="icon-car-wash"></span>
+                        </div>
+                        <!--End Services Five Single-->
+
+                        <!--Start Services Five Single-->
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="services-five__single">
+                                <div class="services-five__single-img">
+                                    <div class="services-five__single-img-inner">
+                                        <img style="height:340px" src="assets/images/services/serv6.webp" alt="">
+                                    </div>
+                                    <div class="icon">
+                                        <span class="icon-car-wash"></span>
+                                    </div>
+                                </div>
+                                <div class="services-five__single-content text-center">
+                                    <h2><a href="house-cleaning.php">Custom society packages</a></h2>
+                                    <p>Tailored schedules and scope for each building. We work with your committee.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="services-five__single-content text-center">
-                            <h2><a href="house-cleaning.php">Custom society packages</a></h2>
-                            <p>Tailored schedules and scope for each building. We <br>work with your committee</p>
-                        </div>
-                        </div>
-                    </div>
-                    <!--End Services Five Single-->
+                        <!--End Services Five Single-->
+
                     </div>
                 </div>
 
@@ -1154,19 +1254,16 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="icon-envelope"></i>
-                    <a href="mailto:needhelp@cleanin.com">needhelp@cleanin.com</a>
+                    <a href="mailto:yashenterprises5556@gmail.com">yashenterprises5556@gmail.com</a>
                 </li>
                 <li>
                     <i class="icon-phone-call"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:992-275-6972">992 275 6972</a>
                 </li>
             </ul>
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="icon-facebook-app-symbol"></a>
-                    <a href="#" class="icon-twitter-1"></a>
                     <a href="https://www.instagram.com/yash.enterprises__?utm_source=qr&stkn=MXd3OWpuMnVmbTJweQ%3D%3D" class="icon-instagram"></a>
-                    <a href="#" class="icon-pinterest"></a>
                 </div>
             </div>
         </div>
@@ -1245,7 +1342,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     resultDiv.textContent = 'Sending...';
     resultDiv.style.color = '#032E56';
 
-    fetch('https://formsubmit.co/ajax/swapnali.developer@elevatexpert.in', {
+    fetch('https://formsubmit.co/ajax/yashenterprises5556@gmail.com', {
         method: 'POST',
         headers: {
             'Accept': 'application/json'
